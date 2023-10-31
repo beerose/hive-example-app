@@ -14,7 +14,6 @@ jobs:
         run: |
           echo $GITHUB_REPOSITORY
           curl -sSL https://graphql-hive.com/install.sh | sh
-          hive schema:check "schema.graphql" \
+          hive schema:check "schema.graphql" --github \
             --registry.accessToken ${{ env.HIVE_TOKEN }} \
-            --registry.endpoint ${{ env.HIVE_ENDPOINT }} \
-            --github=true
+            --registry.endpoint ${{ env.HIVE_ENDPOINT }}
