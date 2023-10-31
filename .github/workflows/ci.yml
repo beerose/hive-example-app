@@ -12,9 +12,8 @@ jobs:
           HIVE_TOKEN: ${{ secrets.HIVE_TOKEN }}
           HIVE_ENDPOINT: ${{ secrets.HIVE_ENDPOINT }}
         run: |
-          npm i -g @graphql-hive/cli@0.30.0-alpha-20231005153523-259db2a1
-          hive schema:check "schema.graphql" \
+          echo $GITHUB_REPOSITORY
+          curl -sSL https://graphql-hive.com/install.sh | sh
+          hive schema:check "schema.graphql" --github \
             --registry.accessToken ${{ env.HIVE_TOKEN }} \
-            --registry.endpoint ${{ env.HIVE_ENDPOINT }} \
-            --service whatever \
-            --github
+            --registry.endpoint ${{ env.HIVE_ENDPOINT }}
