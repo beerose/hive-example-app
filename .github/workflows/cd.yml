@@ -18,4 +18,4 @@ jobs:
             --registry.endpoint ${{ env.HIVE_ENDPOINT }} \
             --service whatever \
             --url http://localhost:9898/graphql \
-            --github
+            --github=true
