@@ -17,5 +17,4 @@ jobs:
           hive schema:check "schema.graphql" \
             --registry.accessToken ${{ env.HIVE_TOKEN }} \
             --registry.endpoint ${{ env.HIVE_ENDPOINT }} \
-            --service ${{ env.HIVE_ENDPOINT }} \
-            --github
+            --github=true
